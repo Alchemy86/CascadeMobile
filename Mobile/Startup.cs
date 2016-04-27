@@ -1,8 +1,7 @@
 ﻿using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
-using Microsoft.AspNet.Http;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Framework.Configuration;
 
 namespace Mobile
 {
@@ -13,9 +12,9 @@ namespace Mobile
         public Startup(IHostingEnvironment env, Microsoft.Extensions.PlatformAbstractions.IApplicationEnvironment appEnv)
         {
             //Setup the project app path and add the custom config file
-            var configurationBuilder = new ConfigurationBuilder(appEnv.ApplicationBasePath);
-            configurationBuilder.AddJsonFile("config.json");
-            configurationBuilder.AddEnvironmentVariables();
+            var configurationBuilder = new ConfigurationBuilder()
+                .AddJsonFile("config.json")
+                .AddEnvironmentVariables();
             Configuration = configurationBuilder.Build();
         }
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -31,14 +30,14 @@ namespace Mobile
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app)
         {
-            app.UseMvc();
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=App}/{action=Index}/{id?}");
+            });
             app.UseStaticFiles();
             app.UseIISPlatformHandler();
-
-            app.Run(async (context) =>
-            {
-                await context.Response.WriteAsync("Hello World!");
-            });
         }
 
         // Entry point for the application.
