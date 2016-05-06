@@ -4,15 +4,19 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
 </head>
 <body>
     <div id="titleContainer">
         <div id="mainTitle">@ViewBag.Title</div>
-        <div id="subTitle"></div>
+        <div id="subTitle">@ViewBag.SubTitle</div>
     </div>
-    <div>
+    <div id="bodycontainer" class="container body-content">
         @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Cascade HR Mobile</p>
+        </footer>
     </div>
-    <div id="footerContainer"></div>
 </body>
 </html>
