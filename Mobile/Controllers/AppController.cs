@@ -11,5 +11,10 @@ namespace Mobile.Controllers
         {
             return View("Index");
         }
+
+        public IActionResult Login()
+        {
+            return View("login");
+        }
     }
 }

@@ -35,6 +35,9 @@ namespace Mobile
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=App}/{action=Index}/{id?}");
+                routes.MapRoute(
+                    "LoginRoute", "Login",
+                    new { controller = "App", action = "Login" });
             });
             app.UseStaticFiles();
             app.UseIISPlatformHandler();
