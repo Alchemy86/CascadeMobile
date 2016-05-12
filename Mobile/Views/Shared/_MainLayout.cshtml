@@ -6,15 +6,25 @@
     <title>@ViewBag.Title</title>
     <link rel="stylesheet" type="text/css" href="~/Styles/Mobile/style.css" media="only screen and (max-width: 480px)" />
     <link rel="stylesheet" type="text/css" href="~/Styles/Desktop/style.css" media="only screen and (max-width: 481px)" />
-    <!--[if IE]-->
     <link rel="stylesheet" type="text/css" href="~/Styles/Style.css" media="all" />
-    <![endif]-->
-    <link rel="stylesheet" type="text/css" href="~/Styles/Style.css" media="all" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-mobile-min/jquery.mobile.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    @RenderSection("Scripts", false)
 </head>
 <body>
-    <div id="titleContainer" class="pull-right">
-        <div id="mainTitle">@ViewBag.Title</div>
-        <div id="subTitle">@ViewBag.SubTitle</div>
+    <div class="navbar-collapse">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 text-center">
+            <h3>@ViewBag.Title</h3>
+            <h5>@ViewBag.SubTitle</h5>
+        </div>
+        <div class="col-md-4"></div>
     </div>
     <div id="bodycontainer" class="container body-content">
         @RenderBody()
@@ -51,9 +61,5 @@
             </div>
         </footer>
     </div>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    @RenderSection("Scripts", false)
 </body>
 </html>

@@ -1,9 +1,11 @@
 ﻿@{
     ViewData["Title"] = "Home Pasdge boom";
-    ViewData["SubTitle"] = "Home Pagesdss boom";
+    ViewData["SubTitle"] = "Other such stuffs";
 }
 @{Layout = "~/Views/Shared/_MainLayout.cshtml";}
 @section Scripts {
     
 }
-Moop
+@Html.ActionLink("Log In PLease", "Login", "App",
+      new { id = 1 },
+      new Dictionary<string, object> { { "data-transition", "slide" }, { "class", "moo" } });

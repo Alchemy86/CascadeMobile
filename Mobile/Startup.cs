@@ -2,6 +2,8 @@
 using Microsoft.AspNet.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Ninject;
+
 
 namespace Mobile
 {
