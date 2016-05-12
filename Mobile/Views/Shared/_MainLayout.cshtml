@@ -18,13 +18,18 @@
     @RenderSection("Scripts", false)
 </head>
 <body>
-    <div class="navbar-collapse">
-        <div class="col-md-4"></div>
-        <div class="col-md-4 text-center">
-            <h3>@ViewBag.Title</h3>
-            <h5>@ViewBag.SubTitle</h5>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-collapse collapse">
+                <h3>@ViewBag.Title</h3>
+                <h5>@ViewBag.SubTitle</h5>
+            </div>
+            <div class="navbar-header">
+                <div class="navbar-toggle" data-toggle="collapse">
+                    <h3>@ViewBag.Title</h3>
+                </div>
+            </div>
         </div>
-        <div class="col-md-4"></div>
     </div>
     <div id="bodycontainer" class="container body-content">
         @RenderBody()
