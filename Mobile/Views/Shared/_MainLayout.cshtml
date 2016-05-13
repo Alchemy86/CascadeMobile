@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@{
+    ViewData["Logo"] = "~/img/bird.png";
+}
+<!DOCTYPE html>
 
 <html>
 <head>
@@ -18,19 +21,24 @@
     @RenderSection("Scripts", false)
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-collapse collapse">
-                <h3>@ViewBag.Title</h3>
-                <h5>@ViewBag.SubTitle</h5>
-            </div>
-            <div class="navbar-header">
-                <div class="navbar-toggle" data-toggle="collapse">
+        <div class="navbar navbar-inverse">
+
+            <div class="container">
+                <div class="navbar-toggle navbar-text" data-toggle="collapse">
                     <h3>@ViewBag.Title</h3>
                 </div>
+                <div class="navbar-brand" rel="home" href="#" title="CascadeHR Mobile">
+                    <img style="max-width:50px; max-height: 50px;"
+                         src="@ViewBag.Logo">
+                </div>
+
+                <div class="navbar-collapse collapse navbar-text">
+                    <h3>@ViewBag.Title</h3>
+                    <h5>@ViewBag.SubTitle</h5>
+                </div>
             </div>
+
         </div>
-    </div>
     <div id="bodycontainer" class="container body-content">
         @RenderBody()
         <hr />
@@ -66,5 +74,6 @@
             </div>
         </footer>
     </div>
+    <link href="~/styles/customstyles.css" rel="stylesheet" />
 </body>
 </html>

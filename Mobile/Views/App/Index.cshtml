@@ -1,12 +1,11 @@
 ﻿@{
-    ViewData["Title"] = "Home Pasdge boom";
-    ViewData["SubTitle"] = "Other such stuffs";
-    ViewData["Logo"] = "img/bird.png";
+    ViewData["Title"] = "Home Page";
+    ViewData["SubTitle"] = "My Sub Title";
 }
 @{Layout = "~/Views/Shared/_MainLayout.cshtml";}
 @section Scripts {
     
 }
 @Html.ActionLink("Log In PLease", "Login", "App",
-      new { id = 1 },
+      null,
       new Dictionary<string, object> { { "data-transition", "slide" }, { "class", "moo" } });
