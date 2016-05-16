@@ -5,3 +5,9 @@
 .subtitle{
     padding-top: 10px;
 }
+
+a > img {
+    padding-right: 5px;
+}
+
+li > a:hover {-webkit-filter: brightness(250%); }

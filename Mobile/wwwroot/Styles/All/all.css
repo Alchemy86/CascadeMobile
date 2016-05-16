@@ -1,27 +1,45 @@
 ﻿
 .title {
     color: white;
+        text-align: left;
 }
 .subtitle{
     color: black;
 }
-
+/* Set the navigation background colour */
 .navbar-inverse{
     background-color: #c61d21;
 }
-.navbar-text {
-    color: white;
-}
+/* Set the navigation link color */
 .navbar-inverse .navbar-nav > li > a {
     color: white;
 }
-.navbar {
+/* Fix the header bar */
+#headnav {
     max-height:75px !important;
 }
 .header{
     max-height:5px;
 }
+.navbar-text {
+    color: white;
+}
 
-body {
-        background-image:-webkit-gradient(linear, 0 0, 0 100%, color-stop(0, #858688), color-stop(0.55, #858688), color-stop(0.56, #7A7B7D), color-stop(0.57, #7A7B7D), color-stop(0.58, #6E6E70), color-stop(1, #6E6E70));
+.navbar-toggle {
+  border: none;
+  outline: none;
+}
+
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+}
+.navbar .navbar-collapse {
+    text-align: center;
+}
+
+.nav > li > a {
+    padding-right: 20px;
+    padding-left: 20px;
+    -webkit-filter: brightness(150%);
 }

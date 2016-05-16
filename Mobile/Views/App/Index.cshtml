@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Cascade Mobile v2.0";
     ViewData["SubTitle"] = "Welcome to Cascade Mobile";
 }
 @{Layout = "~/Views/Shared/_MainLayout.cshtml";}
@@ -9,4 +9,4 @@
 
 @Html.ActionLink("Log In PLease", "Login", "App",
       null,
-      new Dictionary<string, object> { { "data-transition", "slide" }, { "class", "moo" } });
+      new Dictionary<string, object> { { "data-transition", "slide" }, { "class", "moo" }, { "hidden", "hidden"} })
