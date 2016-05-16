@@ -1091,6 +1091,26 @@
           "lib/dnx451/Microsoft.AspNet.Server.Kestrel.dll": {}
         }
       },
+      "Microsoft.AspNet.Server.WebListener/1.0.0-rc1-final": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Hosting": "1.0.0-rc1-final",
+          "Microsoft.Net.Http.Headers": "1.0.0-rc1-final",
+          "Microsoft.Net.Http.Server": "1.0.0-rc1-final"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/dnx451/Microsoft.AspNet.Server.WebListener.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Microsoft.AspNet.Server.WebListener.dll": {}
+        }
+      },
       "Microsoft.AspNet.StaticFiles/1.0.0-rc1-final": {
         "type": "package",
         "dependencies": {
@@ -1130,51 +1150,6 @@
         },
         "runtime": {
           "lib/net451/Microsoft.AspNet.Tooling.Razor.dll": {}
-        }
-      },
-      "Microsoft.AspNet.WebApi/5.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNet.WebApi.WebHost": "5.0.0"
-        }
-      },
-      "Microsoft.AspNet.WebApi.Client/5.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Newtonsoft.Json": "4.5.11"
-        },
-        "frameworkAssemblies": [
-          "System.Net.Http"
-        ],
-        "compile": {
-          "lib/net45/System.Net.Http.Formatting.dll": {}
-        },
-        "runtime": {
-          "lib/net45/System.Net.Http.Formatting.dll": {}
-        }
-      },
-      "Microsoft.AspNet.WebApi.Core/5.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNet.WebApi.Client": "5.0.0"
-        },
-        "compile": {
-          "lib/net45/System.Web.Http.dll": {}
-        },
-        "runtime": {
-          "lib/net45/System.Web.Http.dll": {}
-        }
-      },
-      "Microsoft.AspNet.WebApi.WebHost/5.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNet.WebApi.Core": "5.0.0"
-        },
-        "compile": {
-          "lib/net45/System.Web.Http.WebHost.dll": {}
-        },
-        "runtime": {
-          "lib/net45/System.Web.Http.WebHost.dll": {}
         }
       },
       "Microsoft.AspNet.WebUtilities/1.0.0-rc1-final": {
@@ -1908,6 +1883,41 @@
           "lib/net451/Microsoft.Net.Http.Headers.dll": {}
         }
       },
+      "Microsoft.Net.Http.Server/1.0.0-rc1-final": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging.Abstractions": "1.0.0-rc1-final",
+          "Microsoft.Extensions.Primitives": "1.0.0-rc1-final",
+          "Microsoft.Net.WebSockets": "1.0.0-rc1-final"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.Net.Http.Server.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Net.Http.Server.dll": {}
+        }
+      },
+      "Microsoft.Net.WebSockets/1.0.0-rc1-final": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.Net.WebSockets.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Net.WebSockets.dll": {}
+        }
+      },
       "Microsoft.VisualStudio.Web.BrowserLink.Loader/14.0.0-rc1-final": {
         "type": "package",
         "dependencies": {
@@ -1929,15 +1939,6 @@
           "lib/dnx451/Microsoft.VisualStudio.Web.BrowserLink.Loader.dll": {}
         }
       },
-      "Microsoft.Web.Infrastructure/1.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
-        },
-        "runtime": {
-          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
-        }
-      },
       "Newtonsoft.Json/6.0.6": {
         "type": "package",
         "compile": {
@@ -1945,81 +1946,6 @@
         },
         "runtime": {
           "lib/net45/Newtonsoft.Json.dll": {}
-        }
-      },
-      "Ninject/3.2.0": {
-        "type": "package",
-        "compile": {
-          "lib/net45-full/Ninject.dll": {}
-        },
-        "runtime": {
-          "lib/net45-full/Ninject.dll": {}
-        }
-      },
-      "Ninject.MVC5/3.2.1": {
-        "type": "package",
-        "dependencies": {
-          "Ninject": "[3.2.0, 3.3.0)",
-          "Ninject.Web.Common.WebHost": "3.0.0"
-        },
-        "frameworkAssemblies": [
-          "Microsoft.Web.Infrastructure"
-        ],
-        "compile": {
-          "lib/net45-full/Ninject.Web.Mvc.dll": {}
-        },
-        "runtime": {
-          "lib/net45-full/Ninject.Web.Mvc.dll": {}
-        }
-      },
-      "Ninject.Web.Common/3.2.0": {
-        "type": "package",
-        "dependencies": {
-          "Ninject": "[3.2.0, 3.3.0)"
-        },
-        "compile": {
-          "lib/net45-full/Ninject.Web.Common.dll": {}
-        },
-        "runtime": {
-          "lib/net45-full/Ninject.Web.Common.dll": {}
-        }
-      },
-      "Ninject.Web.Common.WebHost/3.0.2-unstable-0": {
-        "type": "package",
-        "dependencies": {
-          "Ninject.Web.Common": "3.0.0-unstable",
-          "WebActivator": "1.5.0"
-        },
-        "frameworkAssemblies": [
-          "Microsoft.Web.Infrastructure"
-        ]
-      },
-      "Ninject.Web.WebApi/3.2.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNet.WebApi": "[5.0.0, 6.0.0)",
-          "Ninject": "[3.2.0, 3.3.0)",
-          "Ninject.Web.Common": "[3.2.0, 3.3.0)"
-        },
-        "compile": {
-          "lib/net45-full/Ninject.Web.WebApi.dll": {}
-        },
-        "runtime": {
-          "lib/net45-full/Ninject.Web.WebApi.dll": {}
-        }
-      },
-      "Ninject.Web.WebApi.WebHost/3.2.4": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNet.WebApi.WebHost": "[5.0.0, 6.0.0)",
-          "Ninject.Web.Common.WebHost": "3.0.0",
-          "Ninject.Web.WebApi": "[3.2.0, 3.3.0)"
-        },
-        "compile": {
-          "lib/net45-full/Ninject.Web.WebApi.WebHost.dll": {}
-        },
-        "runtime": {
-          "lib/net45-full/Ninject.Web.WebApi.WebHost.dll": {}
         }
       },
       "Remotion.Linq/2.0.1": {
@@ -2240,18 +2166,6 @@
         },
         "runtime": {
           "lib/net45/_._": {}
-        }
-      },
-      "WebActivator/1.5.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Web.Infrastructure": "1.0.0"
-        },
-        "compile": {
-          "lib/net40/WebActivator.dll": {}
-        },
-        "runtime": {
-          "lib/net40/WebActivator.dll": {}
         }
       }
     },
@@ -3347,6 +3261,26 @@
           "runtimes/win7-x86/native/libuv.dll": {}
         }
       },
+      "Microsoft.AspNet.Server.WebListener/1.0.0-rc1-final": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Hosting": "1.0.0-rc1-final",
+          "Microsoft.Net.Http.Headers": "1.0.0-rc1-final",
+          "Microsoft.Net.Http.Server": "1.0.0-rc1-final"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/dnx451/Microsoft.AspNet.Server.WebListener.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Microsoft.AspNet.Server.WebListener.dll": {}
+        }
+      },
       "Microsoft.AspNet.StaticFiles/1.0.0-rc1-final": {
         "type": "package",
         "dependencies": {
@@ -3386,51 +3320,6 @@
         },
         "runtime": {
           "lib/net451/Microsoft.AspNet.Tooling.Razor.dll": {}
-        }
-      },
-      "Microsoft.AspNet.WebApi/5.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNet.WebApi.WebHost": "5.0.0"
-        }
-      },
-      "Microsoft.AspNet.WebApi.Client/5.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Newtonsoft.Json": "4.5.11"
-        },
-        "frameworkAssemblies": [
-          "System.Net.Http"
-        ],
-        "compile": {
-          "lib/net45/System.Net.Http.Formatting.dll": {}
-        },
-        "runtime": {
-          "lib/net45/System.Net.Http.Formatting.dll": {}
-        }
-      },
-      "Microsoft.AspNet.WebApi.Core/5.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNet.WebApi.Client": "5.0.0"
-        },
-        "compile": {
-          "lib/net45/System.Web.Http.dll": {}
-        },
-        "runtime": {
-          "lib/net45/System.Web.Http.dll": {}
-        }
-      },
-      "Microsoft.AspNet.WebApi.WebHost/5.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNet.WebApi.Core": "5.0.0"
-        },
-        "compile": {
-          "lib/net45/System.Web.Http.WebHost.dll": {}
-        },
-        "runtime": {
-          "lib/net45/System.Web.Http.WebHost.dll": {}
         }
       },
       "Microsoft.AspNet.WebUtilities/1.0.0-rc1-final": {
@@ -4164,6 +4053,41 @@
           "lib/net451/Microsoft.Net.Http.Headers.dll": {}
         }
       },
+      "Microsoft.Net.Http.Server/1.0.0-rc1-final": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging.Abstractions": "1.0.0-rc1-final",
+          "Microsoft.Extensions.Primitives": "1.0.0-rc1-final",
+          "Microsoft.Net.WebSockets": "1.0.0-rc1-final"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.Net.Http.Server.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Net.Http.Server.dll": {}
+        }
+      },
+      "Microsoft.Net.WebSockets/1.0.0-rc1-final": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.Net.WebSockets.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Net.WebSockets.dll": {}
+        }
+      },
       "Microsoft.VisualStudio.Web.BrowserLink.Loader/14.0.0-rc1-final": {
         "type": "package",
         "dependencies": {
@@ -4185,15 +4109,6 @@
           "lib/dnx451/Microsoft.VisualStudio.Web.BrowserLink.Loader.dll": {}
         }
       },
-      "Microsoft.Web.Infrastructure/1.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
-        },
-        "runtime": {
-          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
-        }
-      },
       "Newtonsoft.Json/6.0.6": {
         "type": "package",
         "compile": {
@@ -4201,81 +4116,6 @@
         },
         "runtime": {
           "lib/net45/Newtonsoft.Json.dll": {}
-        }
-      },
-      "Ninject/3.2.0": {
-        "type": "package",
-        "compile": {
-          "lib/net45-full/Ninject.dll": {}
-        },
-        "runtime": {
-          "lib/net45-full/Ninject.dll": {}
-        }
-      },
-      "Ninject.MVC5/3.2.1": {
-        "type": "package",
-        "dependencies": {
-          "Ninject": "[3.2.0, 3.3.0)",
-          "Ninject.Web.Common.WebHost": "3.0.0"
-        },
-        "frameworkAssemblies": [
-          "Microsoft.Web.Infrastructure"
-        ],
-        "compile": {
-          "lib/net45-full/Ninject.Web.Mvc.dll": {}
-        },
-        "runtime": {
-          "lib/net45-full/Ninject.Web.Mvc.dll": {}
-        }
-      },
-      "Ninject.Web.Common/3.2.0": {
-        "type": "package",
-        "dependencies": {
-          "Ninject": "[3.2.0, 3.3.0)"
-        },
-        "compile": {
-          "lib/net45-full/Ninject.Web.Common.dll": {}
-        },
-        "runtime": {
-          "lib/net45-full/Ninject.Web.Common.dll": {}
-        }
-      },
-      "Ninject.Web.Common.WebHost/3.0.2-unstable-0": {
-        "type": "package",
-        "dependencies": {
-          "Ninject.Web.Common": "3.0.0-unstable",
-          "WebActivator": "1.5.0"
-        },
-        "frameworkAssemblies": [
-          "Microsoft.Web.Infrastructure"
-        ]
-      },
-      "Ninject.Web.WebApi/3.2.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNet.WebApi": "[5.0.0, 6.0.0)",
-          "Ninject": "[3.2.0, 3.3.0)",
-          "Ninject.Web.Common": "[3.2.0, 3.3.0)"
-        },
-        "compile": {
-          "lib/net45-full/Ninject.Web.WebApi.dll": {}
-        },
-        "runtime": {
-          "lib/net45-full/Ninject.Web.WebApi.dll": {}
-        }
-      },
-      "Ninject.Web.WebApi.WebHost/3.2.4": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNet.WebApi.WebHost": "[5.0.0, 6.0.0)",
-          "Ninject.Web.Common.WebHost": "3.0.0",
-          "Ninject.Web.WebApi": "[3.2.0, 3.3.0)"
-        },
-        "compile": {
-          "lib/net45-full/Ninject.Web.WebApi.WebHost.dll": {}
-        },
-        "runtime": {
-          "lib/net45-full/Ninject.Web.WebApi.WebHost.dll": {}
         }
       },
       "Remotion.Linq/2.0.1": {
@@ -4496,18 +4336,6 @@
         },
         "runtime": {
           "lib/net45/_._": {}
-        }
-      },
-      "WebActivator/1.5.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Web.Infrastructure": "1.0.0"
-        },
-        "compile": {
-          "lib/net40/WebActivator.dll": {}
-        },
-        "runtime": {
-          "lib/net40/WebActivator.dll": {}
         }
       }
     },
@@ -5603,6 +5431,26 @@
           "runtimes/win7-x64/native/libuv.dll": {}
         }
       },
+      "Microsoft.AspNet.Server.WebListener/1.0.0-rc1-final": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Hosting": "1.0.0-rc1-final",
+          "Microsoft.Net.Http.Headers": "1.0.0-rc1-final",
+          "Microsoft.Net.Http.Server": "1.0.0-rc1-final"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/dnx451/Microsoft.AspNet.Server.WebListener.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Microsoft.AspNet.Server.WebListener.dll": {}
+        }
+      },
       "Microsoft.AspNet.StaticFiles/1.0.0-rc1-final": {
         "type": "package",
         "dependencies": {
@@ -5642,51 +5490,6 @@
         },
         "runtime": {
           "lib/net451/Microsoft.AspNet.Tooling.Razor.dll": {}
-        }
-      },
-      "Microsoft.AspNet.WebApi/5.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNet.WebApi.WebHost": "5.0.0"
-        }
-      },
-      "Microsoft.AspNet.WebApi.Client/5.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Newtonsoft.Json": "4.5.11"
-        },
-        "frameworkAssemblies": [
-          "System.Net.Http"
-        ],
-        "compile": {
-          "lib/net45/System.Net.Http.Formatting.dll": {}
-        },
-        "runtime": {
-          "lib/net45/System.Net.Http.Formatting.dll": {}
-        }
-      },
-      "Microsoft.AspNet.WebApi.Core/5.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNet.WebApi.Client": "5.0.0"
-        },
-        "compile": {
-          "lib/net45/System.Web.Http.dll": {}
-        },
-        "runtime": {
-          "lib/net45/System.Web.Http.dll": {}
-        }
-      },
-      "Microsoft.AspNet.WebApi.WebHost/5.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNet.WebApi.Core": "5.0.0"
-        },
-        "compile": {
-          "lib/net45/System.Web.Http.WebHost.dll": {}
-        },
-        "runtime": {
-          "lib/net45/System.Web.Http.WebHost.dll": {}
         }
       },
       "Microsoft.AspNet.WebUtilities/1.0.0-rc1-final": {
@@ -6420,6 +6223,41 @@
           "lib/net451/Microsoft.Net.Http.Headers.dll": {}
         }
       },
+      "Microsoft.Net.Http.Server/1.0.0-rc1-final": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging.Abstractions": "1.0.0-rc1-final",
+          "Microsoft.Extensions.Primitives": "1.0.0-rc1-final",
+          "Microsoft.Net.WebSockets": "1.0.0-rc1-final"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.Net.Http.Server.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Net.Http.Server.dll": {}
+        }
+      },
+      "Microsoft.Net.WebSockets/1.0.0-rc1-final": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.Net.WebSockets.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Net.WebSockets.dll": {}
+        }
+      },
       "Microsoft.VisualStudio.Web.BrowserLink.Loader/14.0.0-rc1-final": {
         "type": "package",
         "dependencies": {
@@ -6441,15 +6279,6 @@
           "lib/dnx451/Microsoft.VisualStudio.Web.BrowserLink.Loader.dll": {}
         }
       },
-      "Microsoft.Web.Infrastructure/1.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
-        },
-        "runtime": {
-          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
-        }
-      },
       "Newtonsoft.Json/6.0.6": {
         "type": "package",
         "compile": {
@@ -6457,81 +6286,6 @@
         },
         "runtime": {
           "lib/net45/Newtonsoft.Json.dll": {}
-        }
-      },
-      "Ninject/3.2.0": {
-        "type": "package",
-        "compile": {
-          "lib/net45-full/Ninject.dll": {}
-        },
-        "runtime": {
-          "lib/net45-full/Ninject.dll": {}
-        }
-      },
-      "Ninject.MVC5/3.2.1": {
-        "type": "package",
-        "dependencies": {
-          "Ninject": "[3.2.0, 3.3.0)",
-          "Ninject.Web.Common.WebHost": "3.0.0"
-        },
-        "frameworkAssemblies": [
-          "Microsoft.Web.Infrastructure"
-        ],
-        "compile": {
-          "lib/net45-full/Ninject.Web.Mvc.dll": {}
-        },
-        "runtime": {
-          "lib/net45-full/Ninject.Web.Mvc.dll": {}
-        }
-      },
-      "Ninject.Web.Common/3.2.0": {
-        "type": "package",
-        "dependencies": {
-          "Ninject": "[3.2.0, 3.3.0)"
-        },
-        "compile": {
-          "lib/net45-full/Ninject.Web.Common.dll": {}
-        },
-        "runtime": {
-          "lib/net45-full/Ninject.Web.Common.dll": {}
-        }
-      },
-      "Ninject.Web.Common.WebHost/3.0.2-unstable-0": {
-        "type": "package",
-        "dependencies": {
-          "Ninject.Web.Common": "3.0.0-unstable",
-          "WebActivator": "1.5.0"
-        },
-        "frameworkAssemblies": [
-          "Microsoft.Web.Infrastructure"
-        ]
-      },
-      "Ninject.Web.WebApi/3.2.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNet.WebApi": "[5.0.0, 6.0.0)",
-          "Ninject": "[3.2.0, 3.3.0)",
-          "Ninject.Web.Common": "[3.2.0, 3.3.0)"
-        },
-        "compile": {
-          "lib/net45-full/Ninject.Web.WebApi.dll": {}
-        },
-        "runtime": {
-          "lib/net45-full/Ninject.Web.WebApi.dll": {}
-        }
-      },
-      "Ninject.Web.WebApi.WebHost/3.2.4": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNet.WebApi.WebHost": "[5.0.0, 6.0.0)",
-          "Ninject.Web.Common.WebHost": "3.0.0",
-          "Ninject.Web.WebApi": "[3.2.0, 3.3.0)"
-        },
-        "compile": {
-          "lib/net45-full/Ninject.Web.WebApi.WebHost.dll": {}
-        },
-        "runtime": {
-          "lib/net45-full/Ninject.Web.WebApi.WebHost.dll": {}
         }
       },
       "Remotion.Linq/2.0.1": {
@@ -6752,18 +6506,6 @@
         },
         "runtime": {
           "lib/net45/_._": {}
-        }
-      },
-      "WebActivator/1.5.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Web.Infrastructure": "1.0.0"
-        },
-        "compile": {
-          "lib/net40/WebActivator.dll": {}
-        },
-        "runtime": {
-          "lib/net40/WebActivator.dll": {}
         }
       }
     }
@@ -7553,6 +7295,24 @@
         "thirdpartynotices.txt"
       ]
     },
+    "Microsoft.AspNet.Server.WebListener/1.0.0-rc1-final": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "U1S48H06oKFHVth/1xUtylpa0E4tBDYtxpzfELeZ1aNW3fdOqcd20dlh6bapOP78R+axSY1DI/FR8dGGgn+84Q==",
+      "files": [
+        "lib/dnx451/Microsoft.AspNet.Server.WebListener.dll",
+        "lib/dnx451/Microsoft.AspNet.Server.WebListener.xml",
+        "lib/dnxcore50/Microsoft.AspNet.Server.WebListener.dll",
+        "lib/dnxcore50/Microsoft.AspNet.Server.WebListener.xml",
+        "lib/dotnet5.4/Microsoft.AspNet.Server.WebListener.dll",
+        "lib/dotnet5.4/Microsoft.AspNet.Server.WebListener.xml",
+        "lib/net451/Microsoft.AspNet.Server.WebListener.dll",
+        "lib/net451/Microsoft.AspNet.Server.WebListener.xml",
+        "Microsoft.AspNet.Server.WebListener.1.0.0-rc1-final.nupkg",
+        "Microsoft.AspNet.Server.WebListener.1.0.0-rc1-final.nupkg.sha512",
+        "Microsoft.AspNet.Server.WebListener.nuspec"
+      ]
+    },
     "Microsoft.AspNet.StaticFiles/1.0.0-rc1-final": {
       "type": "package",
       "serviceable": true,
@@ -7582,54 +7342,6 @@
         "Microsoft.AspNet.Tooling.Razor.1.0.0-rc1-final.nupkg",
         "Microsoft.AspNet.Tooling.Razor.1.0.0-rc1-final.nupkg.sha512",
         "Microsoft.AspNet.Tooling.Razor.nuspec"
-      ]
-    },
-    "Microsoft.AspNet.WebApi/5.0.0": {
-      "type": "package",
-      "sha512": "/07pinlu39FnRfx26rXb8Z8+nsIfa9DCKNEQcSRsYsW0UFfv6R+OdshZbXb6lD7aViLjDwx7vVFxM6MPaizU7Q==",
-      "files": [
-        "Microsoft.AspNet.WebApi.5.0.0.nupkg",
-        "Microsoft.AspNet.WebApi.5.0.0.nupkg.sha512",
-        "Microsoft.AspNet.WebApi.nuspec"
-      ]
-    },
-    "Microsoft.AspNet.WebApi.Client/5.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "OMTp9ot40TZgZxnFO+S0ac0EY5CtQs6KTHkMSHmNFDc+a0tWMCsSBuOG6HoH9+G95wNhEfZrZ20btAsHMlQe7w==",
-      "files": [
-        "lib/net45/System.Net.Http.Formatting.dll",
-        "lib/net45/System.Net.Http.Formatting.xml",
-        "lib/portable-wp8+netcore45+net45/System.Net.Http.Formatting.dll",
-        "lib/portable-wp8+netcore45+net45/System.Net.Http.Formatting.xml",
-        "Microsoft.AspNet.WebApi.Client.5.0.0.nupkg",
-        "Microsoft.AspNet.WebApi.Client.5.0.0.nupkg.sha512",
-        "Microsoft.AspNet.WebApi.Client.nuspec"
-      ]
-    },
-    "Microsoft.AspNet.WebApi.Core/5.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "ZOVLLtFpSM8nkJopUM9upbJEUkAUS60j6Sj1hDKewHaekWMUnnoMX/i3Ee+7KgxMGk13yxxQRHtSwcjh1JpJ4w==",
-      "files": [
-        "content/web.config.transform",
-        "lib/net45/System.Web.Http.dll",
-        "lib/net45/System.Web.Http.xml",
-        "Microsoft.AspNet.WebApi.Core.5.0.0.nupkg",
-        "Microsoft.AspNet.WebApi.Core.5.0.0.nupkg.sha512",
-        "Microsoft.AspNet.WebApi.Core.nuspec"
-      ]
-    },
-    "Microsoft.AspNet.WebApi.WebHost/5.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "mvgJ+xoWtDi9RrPFTwicV6xVx1EuNXjLJ19hxXGFHcYdHG3vvr+MI2p1tfN4WUO8SVrug+QHfarkjaucjSzRpw==",
-      "files": [
-        "lib/net45/System.Web.Http.WebHost.dll",
-        "lib/net45/System.Web.Http.WebHost.xml",
-        "Microsoft.AspNet.WebApi.WebHost.5.0.0.nupkg",
-        "Microsoft.AspNet.WebApi.WebHost.5.0.0.nupkg.sha512",
-        "Microsoft.AspNet.WebApi.WebHost.nuspec"
       ]
     },
     "Microsoft.AspNet.WebUtilities/1.0.0-rc1-final": {
@@ -8276,6 +7988,34 @@
         "Microsoft.Net.Http.Headers.nuspec"
       ]
     },
+    "Microsoft.Net.Http.Server/1.0.0-rc1-final": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "XQMZUf0SbVzjTX0vyiVr0LP3Cygy1wCPDZmDla9Yeqc07HvSZ02Sg4qTSKiNV2h85yY3Dka+MNmL3XoYmnsEAA==",
+      "files": [
+        "lib/dotnet5.4/Microsoft.Net.Http.Server.dll",
+        "lib/dotnet5.4/Microsoft.Net.Http.Server.xml",
+        "lib/net451/Microsoft.Net.Http.Server.dll",
+        "lib/net451/Microsoft.Net.Http.Server.xml",
+        "Microsoft.Net.Http.Server.1.0.0-rc1-final.nupkg",
+        "Microsoft.Net.Http.Server.1.0.0-rc1-final.nupkg.sha512",
+        "Microsoft.Net.Http.Server.nuspec"
+      ]
+    },
+    "Microsoft.Net.WebSockets/1.0.0-rc1-final": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "DIzmA7s2sNBEq+Wz5cCPFAYKx1WGiLE7iCVrA7Lvhxf/+EzPWeaKlCYvjSHTPNViZsX/eUI5vsiDmqK/5tZjQA==",
+      "files": [
+        "lib/dotnet5.4/Microsoft.Net.WebSockets.dll",
+        "lib/dotnet5.4/Microsoft.Net.WebSockets.xml",
+        "lib/net451/Microsoft.Net.WebSockets.dll",
+        "lib/net451/Microsoft.Net.WebSockets.xml",
+        "Microsoft.Net.WebSockets.1.0.0-rc1-final.nupkg",
+        "Microsoft.Net.WebSockets.1.0.0-rc1-final.nupkg.sha512",
+        "Microsoft.Net.WebSockets.nuspec"
+      ]
+    },
     "Microsoft.VisualStudio.Web.BrowserLink.Loader/14.0.0-rc1-final": {
       "type": "package",
       "sha512": "L8QBjp1tfPA3j+r9eKtMlebX/k+7pIGxeHZ/ZjkNgt8RLVEOyw9HPMs2Wetav0P3gCIM7YIfIzXV22c19yI83Q==",
@@ -8287,16 +8027,6 @@
         "Microsoft.VisualStudio.Web.BrowserLink.Loader.14.0.0-rc1-final.nupkg",
         "Microsoft.VisualStudio.Web.BrowserLink.Loader.14.0.0-rc1-final.nupkg.sha512",
         "Microsoft.VisualStudio.Web.BrowserLink.Loader.nuspec"
-      ]
-    },
-    "Microsoft.Web.Infrastructure/1.0.0": {
-      "type": "package",
-      "sha512": "FNmvLn5m2LTU/Rs2KWVo0SIIh9Ek+U0ojex7xeDaSHw/zgEP77A8vY5cVWgUtBGS8MJfDGNn8rpXJWEIQaPwTg==",
-      "files": [
-        "lib/net40/Microsoft.Web.Infrastructure.dll",
-        "Microsoft.Web.Infrastructure.1.0.0.nupkg",
-        "Microsoft.Web.Infrastructure.1.0.0.nupkg.sha512",
-        "Microsoft.Web.Infrastructure.nuspec"
       ]
     },
     "Newtonsoft.Json/6.0.6": {
@@ -8321,97 +8051,6 @@
         "Newtonsoft.Json.6.0.6.nupkg.sha512",
         "Newtonsoft.Json.nuspec",
         "tools/install.ps1"
-      ]
-    },
-    "Ninject/3.2.0": {
-      "type": "package",
-      "sha512": "CN7i6J/a1y85jVdeg0FkH5Obqo47SVQBU5929NPmlsi/AbE6ofJoStPHJco4H3aSI696obvoDmFxbZ+tfz7m6A==",
-      "files": [
-        "lib/net35/Ninject.dll",
-        "lib/net35/Ninject.xml",
-        "lib/net40/Ninject.dll",
-        "lib/net40/Ninject.xml",
-        "lib/net45-full/Ninject.dll",
-        "lib/net45-full/Ninject.xml",
-        "lib/sl2/Ninject.dll",
-        "lib/sl2/Ninject.xml",
-        "lib/sl3/Ninject.dll",
-        "lib/sl3/Ninject.xml",
-        "lib/sl3-wp/Ninject.dll",
-        "lib/sl3-wp/Ninject.xml",
-        "lib/sl4/Ninject.dll",
-        "lib/sl4/Ninject.xml",
-        "lib/sl4-windowsphone71/Ninject.dll",
-        "lib/sl4-windowsphone71/Ninject.xml",
-        "lib/sl5/Ninject.dll",
-        "lib/sl5/Ninject.xml",
-        "Ninject.3.2.0.nupkg",
-        "Ninject.3.2.0.nupkg.sha512",
-        "Ninject.nuspec"
-      ]
-    },
-    "Ninject.MVC5/3.2.1": {
-      "type": "package",
-      "sha512": "MfnnUF6vUzg25r8vi182dQNjkAYYWradcYs+an0iKdB+Q3uYzV0tno13K7yMXhbWBaQoUFPX8fyxYy3G6Kpp0w==",
-      "files": [
-        "lib/net40-full/Ninject.Web.Mvc.dll",
-        "lib/net40-full/Ninject.Web.Mvc.xml",
-        "lib/net45-full/Ninject.Web.Mvc.dll",
-        "lib/net45-full/Ninject.Web.Mvc.xml",
-        "Ninject.MVC5.3.2.1.nupkg",
-        "Ninject.MVC5.3.2.1.nupkg.sha512",
-        "Ninject.MVC5.nuspec"
-      ]
-    },
-    "Ninject.Web.Common/3.2.0": {
-      "type": "package",
-      "sha512": "0isoniPCLBWDzFo3f3DrTfo2p/hDxmTzY7sqkIpJuTfXwzDmpRJmfJbK2FqHCgPKmgbsQKPB1JSK0e1HN2FbHw==",
-      "files": [
-        "lib/net35-full/Ninject.Web.Common.dll",
-        "lib/net35-full/Ninject.Web.Common.xml",
-        "lib/net40-full/Ninject.Web.Common.dll",
-        "lib/net40-full/Ninject.Web.Common.xml",
-        "lib/net45-full/Ninject.Web.Common.dll",
-        "lib/net45-full/Ninject.Web.Common.xml",
-        "Ninject.Web.Common.3.2.0.nupkg",
-        "Ninject.Web.Common.3.2.0.nupkg.sha512",
-        "Ninject.Web.Common.nuspec"
-      ]
-    },
-    "Ninject.Web.Common.WebHost/3.0.2-unstable-0": {
-      "type": "package",
-      "sha512": "vjhWtyuOcf4E66xqhdxm5Eg4/raBJ1kaJ30nouOCsmxYgUaNKZkMEU1PMSmDm5L+PqzyLJQV61YRTocDY9XkaA==",
-      "files": [
-        "Content/App_Start/NinjectWebCommon.cs.pp",
-        "Ninject.Web.Common.WebHost.3.0.2-unstable-0.nupkg",
-        "Ninject.Web.Common.WebHost.3.0.2-unstable-0.nupkg.sha512",
-        "Ninject.Web.Common.WebHost.nuspec"
-      ]
-    },
-    "Ninject.Web.WebApi/3.2.0": {
-      "type": "package",
-      "sha512": "gYAQjI1hyYMrwn6xlbjrBbqn5KADykeFO0hGEbdrhabZum+ZXUQxFHE3yL9Z3ZEUV5GpHScQDVCmhE883BH2zQ==",
-      "files": [
-        "lib/net40-full/Ninject.Web.WebApi.dll",
-        "lib/net40-full/Ninject.Web.WebApi.xml",
-        "lib/net45-full/Ninject.Web.WebApi.dll",
-        "lib/net45-full/Ninject.Web.WebApi.xml",
-        "Ninject.Web.WebApi.3.2.0.nupkg",
-        "Ninject.Web.WebApi.3.2.0.nupkg.sha512",
-        "Ninject.Web.WebApi.nuspec"
-      ]
-    },
-    "Ninject.Web.WebApi.WebHost/3.2.4": {
-      "type": "package",
-      "sha512": "fyLVVotckJNXlMxdigNh/xGqZQf0UMZvbvyuyO6ezlgN9i3YvT7CK6s4rWSZB6VM7Zk+0deXfipOCz72468aHg==",
-      "files": [
-        "lib/net40-full/Ninject.Web.WebApi.WebHost.dll",
-        "lib/net40-full/Ninject.Web.WebApi.WebHost.xml",
-        "lib/net45-full/Ninject.Web.WebApi.WebHost.dll",
-        "lib/net45-full/Ninject.Web.WebApi.WebHost.xml",
-        "Ninject.Web.WebApi.WebHost.3.2.4.nupkg",
-        "Ninject.Web.WebApi.WebHost.3.2.4.nupkg.sha512",
-        "Ninject.Web.WebApi.WebHost.nuspec"
       ]
     },
     "Remotion.Linq/2.0.1": {
@@ -9204,16 +8843,6 @@
         "System.Threading.4.0.0.nupkg.sha512",
         "System.Threading.nuspec"
       ]
-    },
-    "WebActivator/1.5.0": {
-      "type": "package",
-      "sha512": "ydipCDwXsH9MZQT57Ev88pjE+ENzNh5a5nvG9go7xNxBtFf87tL56PmQUUrj7StaE+FuqVNxid3DuRGYY59xeQ==",
-      "files": [
-        "lib/net40/WebActivator.dll",
-        "WebActivator.1.5.0.nupkg",
-        "WebActivator.1.5.0.nupkg.sha512",
-        "WebActivator.nuspec"
-      ]
     }
   },
   "projectFileDependencyGroups": {
@@ -9224,7 +8853,6 @@
       "Microsoft.AspNet.Authentication.Cookies >= 1.0.0-rc1-final",
       "Microsoft.AspNet.Diagnostics.Entity >= 7.0.0-rc1-final",
       "Microsoft.AspNet.Identity.EntityFramework >= 3.0.0-rc1-final",
-      "Microsoft.AspNet.IISPlatformHandler >= 1.0.0-rc1-final",
       "Microsoft.AspNet.Mvc >= 6.0.0-rc1-final",
       "Microsoft.AspNet.Mvc.TagHelpers >= 6.0.0-rc1-final",
       "Microsoft.AspNet.Server.Kestrel >= 1.0.0-rc1-final",
@@ -9238,8 +8866,8 @@
       "Microsoft.Extensions.Logging.Console >= 1.0.0-rc1-final",
       "Microsoft.Extensions.Logging.Debug >= 1.0.0-rc1-final",
       "Microsoft.VisualStudio.Web.BrowserLink.Loader >= 14.0.0-rc1-final",
-      "Ninject.MVC5 >= 3.2.1",
-      "Ninject.Web.WebApi.WebHost >= 3.2.4"
+      "Microsoft.AspNet.IISPlatformHandler >= 1.0.0-rc1-final",
+      "Microsoft.AspNet.Server.WebListener >= 1.0.0-rc1-final"
     ],
     "DNX,Version=v4.5.1": []
   }

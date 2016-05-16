@@ -6,47 +6,48 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <meta name="Robots" content="noindex" />
     <title>@ViewBag.Title</title>
-    <link rel="stylesheet" type="text/css" href="~/Styles/Mobile/style.css" media="only screen and (max-width: 480px)" />
-    <link rel="stylesheet" type="text/css" href="~/Styles/Desktop/style.css" media="only screen and (max-width: 481px)" />
-    <link rel="stylesheet" type="text/css" href="~/Styles/Style.css" media="all" />
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
 
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/jquery-mobile-min/jquery.mobile.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="~/styles/all/all.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="~/Styles/Mobile/mobile.css" media="only screen and (max-width: 481px)" />
+    <link rel="stylesheet" type="text/css" href="~/Styles/Desktop/desktop.css" media="only screen and (min-width: 481px)" />
 
     @RenderSection("Scripts", false)
 </head>
 <body>
-        <div class="navbar navbar-inverse">
-
-            <div class="container">
-                <div class="navbar-toggle navbar-text" data-toggle="collapse">
-                    <h3>@ViewBag.Title</h3>
-                </div>
-                <div class="navbar-brand" rel="home" href="#" title="CascadeHR Mobile">
-                    <img style="max-width:50px; max-height: 50px;"
-                         src="@ViewBag.Logo">
-                </div>
-
-                <div class="navbar-collapse collapse navbar-text">
-                    <h3>@ViewBag.Title</h3>
-                    <h5>@ViewBag.SubTitle</h5>
+    <div data-role="page">
+        <div id = "header" data-role="header" data-id="persistent" data-position="fixed">
+            <div class="navbar navbar-inverse">
+                <div class="container">
+                    <div class="navbar-toggle navbar-text" data-toggle="collapse">
+                        <h3 class="title">@ViewBag.Title</h3>
+                        <h5 class="subtitle">@ViewBag.SubTitle</h5>
+                    </div>
+                    <div class="navbar-left" rel="home" href="#" title="CascadeHR Mobile">
+                        <img style="max-width:100px; max-height: 100px; margin-top: 5px"
+                             src="@ViewBag.Logo">
+                    </div>
+                    <div class="navbar-collapse collapse navbar-text">
+                        <h3 class="title">@ViewBag.Title</h3>
+                        <h5 class="subtitle">@ViewBag.SubTitle</h5>
+                    </div>
                 </div>
             </div>
-
         </div>
-    <video controls="controls" autoplay="" loop="" preload="auto">
-        <source src="~/img/bubbles.mp4" />
-    </video>
-    <div id="bodycontainer" class="container body-content">
-        @RenderBody()
-        <hr />
+        <!-- content -->
+        <div data-role="content">
+            @RenderBody()
+        </div>
 
-        <footer>
+        <footer data-id="persistent" data-position="fixed">
             <div class="navbar navbar-inverse navbar-fixed-bottom">
                 <div class="container">
                     <div class="navbar-collapse collapse" id="footer-body">
@@ -72,11 +73,12 @@
                             <li><a href="#" class="btn" title="Subscriptions"><i class="fa fa-2x fa-rss-square orange-text"></i></a></li>
                         </ul>
                     </div>
-
                 </div>
             </div>
         </footer>
     </div>
+
+    <!-- overriding styles -->
     <link href="~/styles/customstyles.css" rel="stylesheet" />
 </body>
 </html>

@@ -2,8 +2,6 @@
 using Microsoft.AspNet.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Ninject;
-
 
 namespace Mobile
 {
@@ -43,6 +41,7 @@ namespace Mobile
             });
             app.UseStaticFiles();
             app.UseIISPlatformHandler();
+
         }
 
         // Entry point for the application.

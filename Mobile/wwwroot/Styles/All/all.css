@@ -1,0 +1,27 @@
+﻿
+.title {
+    color: white;
+}
+.subtitle{
+    color: black;
+}
+
+.navbar-inverse{
+    background-color: #c61d21;
+}
+.navbar-text {
+    color: white;
+}
+.navbar-inverse .navbar-nav > li > a {
+    color: white;
+}
+.navbar {
+    max-height:75px !important;
+}
+.header{
+    max-height:5px;
+}
+
+body {
+        background-image:-webkit-gradient(linear, 0 0, 0 100%, color-stop(0, #858688), color-stop(0.55, #858688), color-stop(0.56, #7A7B7D), color-stop(0.57, #7A7B7D), color-stop(0.58, #6E6E70), color-stop(1, #6E6E70));
+}
