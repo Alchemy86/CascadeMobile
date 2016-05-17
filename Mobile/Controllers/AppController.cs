@@ -16,5 +16,35 @@ namespace Mobile.Controllers
         {
             return View("login");
         }
+
+        public IActionResult MyDetails()
+        {
+            return View("~/Views/User/MyDetails.cshtml");
+        }
+
+        public IActionResult Payslips()
+        {
+            return View("~/Views/User/Payslips.cshtml");
+        }
+
+        public IActionResult Holidays()
+        {
+            return View("~/Views/User/Holidays.cshtml");
+        }
+
+        public IActionResult Requests()
+        {
+            return View("~/Views/User/Requests.cshtml");
+        }
+
+        public IActionResult Tasks()
+        {
+            return View("~/Views/User/Tasks.cshtml");
+        }
+
+        public IActionResult MyTeam()
+        {
+            return View("~/Views/User/Team.cshtml");
+        }
     }
 }

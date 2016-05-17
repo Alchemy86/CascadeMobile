@@ -54,12 +54,13 @@
                 <div class="container-fluid">
                     <div class="navbar-collapse collapse" id="footer-body">
                         <ul class="nav navbar-nav">
-                            <li><a href="#"><img src="~/img/icons/myrecord.png" />My Record</a></li>
-                            <li><a href="#"><img src="~/img/icons/myteam.png" />Team Headcount</a></li>
-                            <li><a href="#"><img src="~/img/icons/holidays.png" />My Holidays</a></li>
-                            <li><a href="#"><img src="~/img/icons/payslips.png" />Payslip</a></li>
-                            <li><a href="#"><img src="~/img/icons/tasks.png" />Tasks</a></li>
-                            <li><a href="#"><img src="~/img/icons/authorise.png" />Requests</a></li>
+                            <li><a href="@Url.Action("MyDetails", "App")"><img src="~/img/icons/myrecord.png" />My Record</a></li>
+                            <li><a href="@Url.Action("MyTeam", "App")"><img src="~/img/icons/myteam.png" />Team Headcount</a></li>
+                            <li><a href="@Url.Action("Holidays", "App")"><img src="~/img/icons/holidays.png" />My Holidays</a></li>
+                            <li><a data-transition="slide" href="@Url.Action("Payslips", "App")"> 
+                                <img src="~/img/icons/payslips.png" />Payslip</a></li>
+                            <li><a href="@Url.Action("Tasks", "App")"><img src="~/img/icons/tasks.png" />Tasks</a></li>
+                            <li><a href="@Url.Action("Requests", "App")"><img src="~/img/icons/authorise.png" />Requests</a></li>
                         </ul>
                     </div>
                     <div class="navbar-header">
@@ -81,5 +82,13 @@
 
     <!-- overriding customer styles -->
     <link href="~/styles/customstyles.css" rel="stylesheet" />
+    <script type="text/javascript">
+        $(function () {
+            var navMain = $("#footer-body");
+            navMain.on("click", "a", null, function () {
+                navMain.collapse('hide');
+            });
+        });
+    </script>
 </body>
 </html>

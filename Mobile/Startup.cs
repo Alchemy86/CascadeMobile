@@ -33,6 +33,14 @@ namespace Mobile
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
+                    "userRoute", 
+                    "User/{action}",
+                    new { controller = "App", action = "Login" });
+                routes.MapRoute(
+                    "adminRoute",
+                    "Admin/{action}",
+                    new { controller = "App", action = "Login" });
+                routes.MapRoute(
                     name: "default",
                     template: "{controller=App}/{action=Index}/{id?}");
                 routes.MapRoute(
