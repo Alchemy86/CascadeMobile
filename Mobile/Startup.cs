@@ -22,6 +22,8 @@ namespace Mobile
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddInstance<IConfiguration>(Configuration);
+            //services.AddTransient<IEmailSender, AuthMessageSender>();
             //services.AddEntityFramework()
             //    .AddSqlServer()
             //    .AddDbContext<QuotesAppContext>(options => options.UseSqlServer(Configuration["Data:ConnectionString"]));

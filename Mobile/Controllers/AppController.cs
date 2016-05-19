@@ -1,14 +1,20 @@
 ﻿using Microsoft.AspNet.Mvc;
+using Microsoft.Extensions.Configuration;
 
 // For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Mobile.Controllers
 {
-    public class AppController : Controller
+    public class AppController : ControllerBase
     {
+        public AppController(IConfiguration config) : base(config)
+        {
+
+        }
         // GET: /<controller>/
         public IActionResult Index()
         {
+            ViewData["Settings"] = _appSettings;
             return View("Index");
         }
 
