@@ -2,6 +2,7 @@
 using Microsoft.AspNet.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Mobile.Models;
 
 namespace Mobile
 {
@@ -15,6 +16,7 @@ namespace Mobile
             var configurationBuilder = new ConfigurationBuilder()
                 .AddJsonFile("config.json")
                 .AddEnvironmentVariables();
+
             Configuration = configurationBuilder.Build();
         }
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -23,7 +25,7 @@ namespace Mobile
         {
             services.AddMvc();
             services.AddInstance<IConfiguration>(Configuration);
-            //services.AddTransient<IEmailSender, AuthMessageSender>();
+            services.AddTransient<IAppSettings, AppSettings>();
             //services.AddEntityFramework()
             //    .AddSqlServer()
             //    .AddDbContext<QuotesAppContext>(options => options.UseSqlServer(Configuration["Data:ConnectionString"]));

@@ -5,16 +5,11 @@ using Microsoft.Extensions.Configuration;
 
 namespace Mobile.Controllers
 {
-    public class AppController : ControllerBase
+    public class AppController : Controller
     {
-        public AppController(IConfiguration config) : base(config)
-        {
-
-        }
         // GET: /<controller>/
         public IActionResult Index()
         {
-            ViewData["Settings"] = _appSettings;
             return View("Index");
         }
 
