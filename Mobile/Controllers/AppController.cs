@@ -11,10 +11,8 @@ namespace Mobile.Controllers
     [ServiceFilter(typeof(SiteSetting))]
     public class AppController : Controller
     {
-        private IConfiguration _config;
-        public AppController(IConfiguration config)
+        public AppController()
         {
-            _config = config;
         }
         // GET: /<controller>/
         public IActionResult Index()
@@ -29,7 +27,6 @@ namespace Mobile.Controllers
 
         public IActionResult MyDetails()
         {
-            ViewBag.SiteTitle = _config.GetSection("AppSettings").GetSection("Title").Value;
             return View("~/Views/User/MyDetails.cshtml");
         }
 

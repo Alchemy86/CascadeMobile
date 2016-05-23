@@ -31,7 +31,6 @@ namespace Mobile
             services.AddInstance<IConfiguration>(Configuration);
             services.AddTransient<IAppSettings, AppSettings>();
             services.AddScoped<SiteSetting>();
-            services.AddScoped<IAppSettings, AppSettings>();
             //services.AddEntityFramework()
             //    .AddSqlServer()
             //    .AddDbContext<QuotesAppContext>(options => options.UseSqlServer(Configuration["Data:ConnectionString"]));

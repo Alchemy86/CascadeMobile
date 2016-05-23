@@ -1,17 +1,16 @@
-﻿using System.Configuration;
-using Microsoft.AspNet.Mvc;
+﻿using Microsoft.AspNet.Mvc;
 using Microsoft.AspNet.Mvc.Filters;
-using Mobile.Models;
+using Microsoft.Extensions.Configuration;
 
 namespace Mobile.CustomAttributes
 {
     public class SiteSetting : ActionFilterAttribute
     {
-        //private IAppSettings _settings;
-        //public SiteSetting(IAppSettings settings)
-        //{
-        //    _settings = settings;
-        //}
+        private IConfiguration _config;
+        public SiteSetting(IConfiguration config)
+        {
+            _config = config;
+        }
 
         /// <summary>
         /// Overwrite the procedure to pass in site settings by default for controllers
@@ -19,9 +18,8 @@ namespace Mobile.CustomAttributes
         /// <param name="context"></param>
         public override void OnActionExecuting(ActionExecutingContext context)
         {
-            //var logger = context.Request.GetDependencyScope().GetService(typeof(IAppSettings)) as IAppSettings;
             var controller = context.Controller as Controller;
-            //controller.ViewBag.SiteTitle = "Moose";//ConfigurationManager.AppSettings["CascadeHrEndPointRoot"].ToString();
+            controller.ViewBag.SiteTitle = _config.GetSection("AppSettings").GetSection("Title2").Value;
             base.OnActionExecuting(context);
         }
     }
