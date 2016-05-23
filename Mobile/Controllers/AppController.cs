@@ -1,12 +1,21 @@
 ﻿using Microsoft.AspNet.Mvc;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.OptionsModel;
+using Mobile.CustomAttributes;
+using Mobile.Models;
 
 // For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Mobile.Controllers
 {
+    [ServiceFilter(typeof(SiteSetting))]
     public class AppController : Controller
     {
+        private IConfiguration _config;
+        public AppController(IConfiguration config)
+        {
+            _config = config;
+        }
         // GET: /<controller>/
         public IActionResult Index()
         {
@@ -20,6 +29,7 @@ namespace Mobile.Controllers
 
         public IActionResult MyDetails()
         {
+            ViewBag.SiteTitle = _config.GetSection("AppSettings").GetSection("Title").Value;
             return View("~/Views/User/MyDetails.cshtml");
         }
 

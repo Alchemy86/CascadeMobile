@@ -1,8 +1,6 @@
 ﻿@{
     ViewData["Logo"] = "~/img/bird.png";
     ViewData["Icon"] = "~/img/cascade.ico";
-    //@using Mobile.Models
-    //@inject IAppSettings testService
 }
 <!DOCTYPE html>
 
@@ -10,7 +8,7 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <meta name="Robots" content="noindex" />
-    <title>ooo</title>
+    <title>@ViewBag.SiteTitle</title>
     <link rel="icon" type="image/x-icon" href="@ViewBag.Icon" /> 
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
 

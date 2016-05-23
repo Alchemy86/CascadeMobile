@@ -2,6 +2,7 @@
 using Microsoft.AspNet.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Mobile.CustomAttributes;
 using Mobile.Models;
 
 namespace Mobile
@@ -24,8 +25,13 @@ namespace Mobile
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddCaching();
+            services.AddSession();
+
             services.AddInstance<IConfiguration>(Configuration);
             services.AddTransient<IAppSettings, AppSettings>();
+            services.AddScoped<SiteSetting>();
+            services.AddScoped<IAppSettings, AppSettings>();
             //services.AddEntityFramework()
             //    .AddSqlServer()
             //    .AddDbContext<QuotesAppContext>(options => options.UseSqlServer(Configuration["Data:ConnectionString"]));
@@ -34,6 +40,7 @@ namespace Mobile
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app)
         {
+            app.UseSession();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
