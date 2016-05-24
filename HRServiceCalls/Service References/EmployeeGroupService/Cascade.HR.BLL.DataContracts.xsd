@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Cascade.HR.BLL.DataContracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Cascade.HR.BLL.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfHeadCount">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HeadCount" nillable="true" type="tns:HeadCount" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHeadCount" nillable="true" type="tns:ArrayOfHeadCount" />
+  <xs:complexType name="HeadCount">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Count" type="xs:int" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HeadCount" nillable="true" type="tns:HeadCount" />
+  <xs:complexType name="ArrayOfEmployeeDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EmployeeDetails" nillable="true" type="tns:EmployeeDetails" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEmployeeDetails" nillable="true" type="tns:ArrayOfEmployeeDetails" />
+  <xs:complexType name="EmployeeDetails">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationOutcome">
+        <xs:sequence>
+          <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Details" nillable="true" type="q1:ArrayOfKeyValueOfstringstring" />
+          <xs:element minOccurs="0" name="EmployeeDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EmployeeID" type="ser:guid" />
+          <xs:element minOccurs="0" name="SessionToken" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EmployeeDetails" nillable="true" type="tns:EmployeeDetails" />
+  <xs:complexType name="OperationOutcome">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="OutcomeDetails" nillable="true" type="tns:OutcomeDetails" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OperationOutcome" nillable="true" type="tns:OperationOutcome" />
+  <xs:complexType name="OutcomeDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="tns:OperationOutcomeStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OutcomeDetails" nillable="true" type="tns:OutcomeDetails" />
+  <xs:simpleType name="OperationOutcomeStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="Failure" />
+      <xs:enumeration value="SystemException" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="OperationOutcomeStatus" nillable="true" type="tns:OperationOutcomeStatus" />
+  <xs:complexType name="InvalidCredentials">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OutcomeDetails">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InvalidCredentials" nillable="true" type="tns:InvalidCredentials" />
+  <xs:complexType name="PinNumberLockout">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OutcomeDetails">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PinNumberLockout" nillable="true" type="tns:PinNumberLockout" />
+  <xs:complexType name="TaskAlreadyComplete">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OutcomeDetails">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TaskAlreadyComplete" nillable="true" type="tns:TaskAlreadyComplete" />
+  <xs:complexType name="LoginLockout">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OutcomeDetails">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LoginLockout" nillable="true" type="tns:LoginLockout" />
+</xs:schema>

@@ -19,7 +19,8 @@ namespace Mobile.CustomAttributes
         public override void OnActionExecuting(ActionExecutingContext context)
         {
             var controller = context.Controller as Controller;
-            controller.ViewBag.SiteTitle = _config.GetSection("AppSettings").GetSection("Title2").Value;
+            controller.ViewBag.SiteTitle = _config.GetSection("AppSettings").GetSection("Title").Value;
+            controller.ViewBag.WelcomeMessage = _config.GetSection("AppSettings").GetSection("WelcomeMessage").Value;
             base.OnActionExecuting(context);
         }
     }

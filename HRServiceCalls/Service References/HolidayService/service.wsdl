@@ -1,0 +1,397 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="HolidayService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSHttpBinding_IHolidayService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsrm:RMAssertion xmlns:wsrm="http://schemas.xmlsoap.org/ws/2005/02/rm/policy">
+          <wsrm:InactivityTimeout Milliseconds="600000" />
+          <wsrm:AcknowledgementInterval Milliseconds="200" />
+        </wsrm:RMAssertion>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Cascade.HR.BLL.DataContracts" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IHolidayService_GetEmployeeCurrentEntitlementYearHolidays_Debug_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeeCurrentEntitlementYearHolidays_Debug" />
+  </wsdl:message>
+  <wsdl:message name="IHolidayService_GetEmployeeCurrentEntitlementYearHolidays_Debug_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeeCurrentEntitlementYearHolidays_DebugResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHolidayService_GetEmployeeCurrentEntitlementYearHolidays_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeeCurrentEntitlementYearHolidays" />
+  </wsdl:message>
+  <wsdl:message name="IHolidayService_GetEmployeeCurrentEntitlementYearHolidays_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeeCurrentEntitlementYearHolidaysResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHolidayService_GetEmployeeBalance_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeeBalance" />
+  </wsdl:message>
+  <wsdl:message name="IHolidayService_GetEmployeeBalance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeeBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHolidayService_GetEmployeeBalanceForRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeeBalanceForRequest" />
+  </wsdl:message>
+  <wsdl:message name="IHolidayService_GetEmployeeBalanceForRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeeBalanceForRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHolidayService_GetHolidayDuration_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHolidayDuration" />
+  </wsdl:message>
+  <wsdl:message name="IHolidayService_GetHolidayDuration_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHolidayDurationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHolidayService_GetPagePermission_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPagePermission" />
+  </wsdl:message>
+  <wsdl:message name="IHolidayService_GetPagePermission_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPagePermissionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHolidayService_GetHolidayClashes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHolidayClashes" />
+  </wsdl:message>
+  <wsdl:message name="IHolidayService_GetHolidayClashes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHolidayClashesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHolidayService_IsKeyPersonBlocking_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsKeyPersonBlocking" />
+  </wsdl:message>
+  <wsdl:message name="IHolidayService_IsKeyPersonBlocking_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsKeyPersonBlockingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHolidayService_CreateHoliday_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateHoliday" />
+  </wsdl:message>
+  <wsdl:message name="IHolidayService_CreateHoliday_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateHolidayResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHolidayService_UpdateHoliday_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateHoliday" />
+  </wsdl:message>
+  <wsdl:message name="IHolidayService_UpdateHoliday_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateHolidayResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHolidayService_DeleteHoliday_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteHoliday" />
+  </wsdl:message>
+  <wsdl:message name="IHolidayService_DeleteHoliday_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteHolidayResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHolidayService_GetEmployeeHoliday_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeeHoliday" />
+  </wsdl:message>
+  <wsdl:message name="IHolidayService_GetEmployeeHoliday_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeeHolidayResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHolidayService_GetTeamHolidayClashes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTeamHolidayClashes" />
+  </wsdl:message>
+  <wsdl:message name="IHolidayService_GetTeamHolidayClashes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTeamHolidayClashesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHolidayService_GetRequestsToAuthorise_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRequestsToAuthorise" />
+  </wsdl:message>
+  <wsdl:message name="IHolidayService_GetRequestsToAuthorise_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRequestsToAuthoriseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHolidayService_GetRequestsToAuthorise_debug_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRequestsToAuthorise_debug" />
+  </wsdl:message>
+  <wsdl:message name="IHolidayService_GetRequestsToAuthorise_debug_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRequestsToAuthorise_debugResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHolidayService_GetRequestDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRequestDetails" />
+  </wsdl:message>
+  <wsdl:message name="IHolidayService_GetRequestDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRequestDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHolidayService_GetRequestDetails_Debug_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRequestDetails_Debug" />
+  </wsdl:message>
+  <wsdl:message name="IHolidayService_GetRequestDetails_Debug_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRequestDetails_DebugResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHolidayService_RejectRequests_InputMessage">
+    <wsdl:part name="parameters" element="tns:RejectRequests" />
+  </wsdl:message>
+  <wsdl:message name="IHolidayService_RejectRequests_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RejectRequestsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHolidayService_ApproveRequests_InputMessage">
+    <wsdl:part name="parameters" element="tns:ApproveRequests" />
+  </wsdl:message>
+  <wsdl:message name="IHolidayService_ApproveRequests_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ApproveRequestsResponse" />
+  </wsdl:message>
+  <wsdl:portType msc:usingSession="true" name="IHolidayService">
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetEmployeeCurrentEntitlementYearHolidays_Debug">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHolidayService/GetEmployeeCurrentEntitlementYearHolidays_Debug" message="tns:IHolidayService_GetEmployeeCurrentEntitlementYearHolidays_Debug_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHolidayService/GetEmployeeCurrentEntitlementYearHolidays_DebugResponse" message="tns:IHolidayService_GetEmployeeCurrentEntitlementYearHolidays_Debug_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetEmployeeCurrentEntitlementYearHolidays">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHolidayService/GetEmployeeCurrentEntitlementYearHolidays" message="tns:IHolidayService_GetEmployeeCurrentEntitlementYearHolidays_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHolidayService/GetEmployeeCurrentEntitlementYearHolidaysResponse" message="tns:IHolidayService_GetEmployeeCurrentEntitlementYearHolidays_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetEmployeeBalance">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHolidayService/GetEmployeeBalance" message="tns:IHolidayService_GetEmployeeBalance_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHolidayService/GetEmployeeBalanceResponse" message="tns:IHolidayService_GetEmployeeBalance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetEmployeeBalanceForRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHolidayService/GetEmployeeBalanceForRequest" message="tns:IHolidayService_GetEmployeeBalanceForRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHolidayService/GetEmployeeBalanceForRequestResponse" message="tns:IHolidayService_GetEmployeeBalanceForRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetHolidayDuration">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHolidayService/GetHolidayDuration" message="tns:IHolidayService_GetHolidayDuration_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHolidayService/GetHolidayDurationResponse" message="tns:IHolidayService_GetHolidayDuration_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetPagePermission">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHolidayService/GetPagePermission" message="tns:IHolidayService_GetPagePermission_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHolidayService/GetPagePermissionResponse" message="tns:IHolidayService_GetPagePermission_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetHolidayClashes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHolidayService/GetHolidayClashes" message="tns:IHolidayService_GetHolidayClashes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHolidayService/GetHolidayClashesResponse" message="tns:IHolidayService_GetHolidayClashes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="IsKeyPersonBlocking">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHolidayService/IsKeyPersonBlocking" message="tns:IHolidayService_IsKeyPersonBlocking_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHolidayService/IsKeyPersonBlockingResponse" message="tns:IHolidayService_IsKeyPersonBlocking_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="CreateHoliday">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHolidayService/CreateHoliday" message="tns:IHolidayService_CreateHoliday_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHolidayService/CreateHolidayResponse" message="tns:IHolidayService_CreateHoliday_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="UpdateHoliday">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHolidayService/UpdateHoliday" message="tns:IHolidayService_UpdateHoliday_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHolidayService/UpdateHolidayResponse" message="tns:IHolidayService_UpdateHoliday_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="DeleteHoliday">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHolidayService/DeleteHoliday" message="tns:IHolidayService_DeleteHoliday_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHolidayService/DeleteHolidayResponse" message="tns:IHolidayService_DeleteHoliday_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetEmployeeHoliday">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHolidayService/GetEmployeeHoliday" message="tns:IHolidayService_GetEmployeeHoliday_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHolidayService/GetEmployeeHolidayResponse" message="tns:IHolidayService_GetEmployeeHoliday_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetTeamHolidayClashes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHolidayService/GetTeamHolidayClashes" message="tns:IHolidayService_GetTeamHolidayClashes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHolidayService/GetTeamHolidayClashesResponse" message="tns:IHolidayService_GetTeamHolidayClashes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetRequestsToAuthorise">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHolidayService/GetRequestsToAuthorise" message="tns:IHolidayService_GetRequestsToAuthorise_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHolidayService/GetRequestsToAuthoriseResponse" message="tns:IHolidayService_GetRequestsToAuthorise_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetRequestsToAuthorise_debug">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHolidayService/GetRequestsToAuthorise_debug" message="tns:IHolidayService_GetRequestsToAuthorise_debug_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHolidayService/GetRequestsToAuthorise_debugResponse" message="tns:IHolidayService_GetRequestsToAuthorise_debug_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetRequestDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHolidayService/GetRequestDetails" message="tns:IHolidayService_GetRequestDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHolidayService/GetRequestDetailsResponse" message="tns:IHolidayService_GetRequestDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetRequestDetails_Debug">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHolidayService/GetRequestDetails_Debug" message="tns:IHolidayService_GetRequestDetails_Debug_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHolidayService/GetRequestDetails_DebugResponse" message="tns:IHolidayService_GetRequestDetails_Debug_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="RejectRequests">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHolidayService/RejectRequests" message="tns:IHolidayService_RejectRequests_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHolidayService/RejectRequestsResponse" message="tns:IHolidayService_RejectRequests_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ApproveRequests">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHolidayService/ApproveRequests" message="tns:IHolidayService_ApproveRequests_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHolidayService/ApproveRequestsResponse" message="tns:IHolidayService_ApproveRequests_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_IHolidayService" type="tns:IHolidayService">
+    <wsp:PolicyReference URI="#WSHttpBinding_IHolidayService_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetEmployeeCurrentEntitlementYearHolidays_Debug">
+      <soap12:operation soapAction="http://tempuri.org/IHolidayService/GetEmployeeCurrentEntitlementYearHolidays_Debug" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeCurrentEntitlementYearHolidays">
+      <soap12:operation soapAction="http://tempuri.org/IHolidayService/GetEmployeeCurrentEntitlementYearHolidays" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeBalance">
+      <soap12:operation soapAction="http://tempuri.org/IHolidayService/GetEmployeeBalance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeBalanceForRequest">
+      <soap12:operation soapAction="http://tempuri.org/IHolidayService/GetEmployeeBalanceForRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHolidayDuration">
+      <soap12:operation soapAction="http://tempuri.org/IHolidayService/GetHolidayDuration" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPagePermission">
+      <soap12:operation soapAction="http://tempuri.org/IHolidayService/GetPagePermission" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHolidayClashes">
+      <soap12:operation soapAction="http://tempuri.org/IHolidayService/GetHolidayClashes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsKeyPersonBlocking">
+      <soap12:operation soapAction="http://tempuri.org/IHolidayService/IsKeyPersonBlocking" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateHoliday">
+      <soap12:operation soapAction="http://tempuri.org/IHolidayService/CreateHoliday" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateHoliday">
+      <soap12:operation soapAction="http://tempuri.org/IHolidayService/UpdateHoliday" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteHoliday">
+      <soap12:operation soapAction="http://tempuri.org/IHolidayService/DeleteHoliday" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeHoliday">
+      <soap12:operation soapAction="http://tempuri.org/IHolidayService/GetEmployeeHoliday" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTeamHolidayClashes">
+      <soap12:operation soapAction="http://tempuri.org/IHolidayService/GetTeamHolidayClashes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRequestsToAuthorise">
+      <soap12:operation soapAction="http://tempuri.org/IHolidayService/GetRequestsToAuthorise" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRequestsToAuthorise_debug">
+      <soap12:operation soapAction="http://tempuri.org/IHolidayService/GetRequestsToAuthorise_debug" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRequestDetails">
+      <soap12:operation soapAction="http://tempuri.org/IHolidayService/GetRequestDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRequestDetails_Debug">
+      <soap12:operation soapAction="http://tempuri.org/IHolidayService/GetRequestDetails_Debug" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RejectRequests">
+      <soap12:operation soapAction="http://tempuri.org/IHolidayService/RejectRequests" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApproveRequests">
+      <soap12:operation soapAction="http://tempuri.org/IHolidayService/ApproveRequests" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HolidayService">
+    <wsdl:port name="WSHttpBinding_IHolidayService" binding="tns:WSHttpBinding_IHolidayService">
+      <soap12:address location="http://localhost/Cascade/dotnet/webservice/secure/HolidayService.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost/Cascade/dotnet/webservice/secure/HolidayService.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

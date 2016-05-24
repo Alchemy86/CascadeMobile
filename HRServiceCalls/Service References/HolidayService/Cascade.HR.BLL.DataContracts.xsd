@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Cascade.HR.BLL.DataContracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Cascade.HR.BLL.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ObjectsPagerOfHolidayN_SsdewcJ">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ObjectsPagerOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/Cascade.HR.BLL.DataContracts" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="Holiday" Namespace="http://schemas.datacontract.org/2004/07/Cascade.HR.BLL.DataContracts" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationOutcome">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IsFirstPage" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsLastPage" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Items" nillable="true" type="tns:ArrayOfHoliday" />
+          <xs:element minOccurs="0" name="NumberOfPages" type="xs:int" />
+          <xs:element minOccurs="0" name="PageNumber" type="xs:int" />
+          <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+          <xs:element minOccurs="0" name="TotalNumberOfItems" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ObjectsPagerOfHolidayN_SsdewcJ" nillable="true" type="tns:ObjectsPagerOfHolidayN_SsdewcJ" />
+  <xs:complexType name="OperationOutcome">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="OutcomeDetails" nillable="true" type="tns:OutcomeDetails" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OperationOutcome" nillable="true" type="tns:OperationOutcome" />
+  <xs:complexType name="OutcomeDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="tns:OperationOutcomeStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OutcomeDetails" nillable="true" type="tns:OutcomeDetails" />
+  <xs:simpleType name="OperationOutcomeStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="Failure" />
+      <xs:enumeration value="SystemException" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="OperationOutcomeStatus" nillable="true" type="tns:OperationOutcomeStatus" />
+  <xs:complexType name="InvalidCredentials">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OutcomeDetails">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InvalidCredentials" nillable="true" type="tns:InvalidCredentials" />
+  <xs:complexType name="PinNumberLockout">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OutcomeDetails">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PinNumberLockout" nillable="true" type="tns:PinNumberLockout" />
+  <xs:complexType name="TaskAlreadyComplete">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OutcomeDetails">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TaskAlreadyComplete" nillable="true" type="tns:TaskAlreadyComplete" />
+  <xs:complexType name="LoginLockout">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OutcomeDetails">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LoginLockout" nillable="true" type="tns:LoginLockout" />
+  <xs:complexType name="ArrayOfHoliday">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Holiday" nillable="true" type="tns:Holiday" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHoliday" nillable="true" type="tns:ArrayOfHoliday" />
+  <xs:complexType name="Holiday">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BalanceAfterRequest" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ChildRequest" nillable="true" type="tns:Request" />
+      <xs:element minOccurs="0" name="Duration" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DurationDayPart" type="tns:AttendanceDayPart" />
+      <xs:element minOccurs="0" name="EmployeeDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmployeeID" type="ser:guid" />
+      <xs:element minOccurs="0" name="EndDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Request" nillable="true" type="tns:Request" />
+      <xs:element minOccurs="0" name="Ruid" type="ser:guid" />
+      <xs:element minOccurs="0" name="StartDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Units" type="tns:AttendanceUnit" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Holiday" nillable="true" type="tns:Holiday" />
+  <xs:complexType name="Request">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationOutcome">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RequestDetails" nillable="true" type="xs:anyType" />
+          <xs:element minOccurs="0" name="RequestID" type="ser:guid" />
+          <xs:element minOccurs="0" name="RequestType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UpdateType" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Request" nillable="true" type="tns:Request" />
+  <xs:simpleType name="AttendanceDayPart">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AM" />
+      <xs:enumeration value="PM" />
+      <xs:enumeration value="FullDay" />
+      <xs:enumeration value="Mixed" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AttendanceDayPart" nillable="true" type="tns:AttendanceDayPart" />
+  <xs:simpleType name="AttendanceUnit">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Days" />
+      <xs:enumeration value="Minutes" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AttendanceUnit" nillable="true" type="tns:AttendanceUnit" />
+  <xs:complexType name="HolidayBalance">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationOutcome">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Entitlement" type="xs:decimal" />
+          <xs:element minOccurs="0" name="EntitlementYearEnd" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EntitlementYearStart" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="OverBookAction" type="tns:OverBookAction" />
+          <xs:element minOccurs="0" name="Taken" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Units" type="tns:AttendanceUnit" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="HolidayBalance" nillable="true" type="tns:HolidayBalance" />
+  <xs:simpleType name="OverBookAction">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Warning" />
+      <xs:enumeration value="Prevent" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="OverBookAction" nillable="true" type="tns:OverBookAction" />
+  <xs:complexType name="SingleHoliday">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationOutcome">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="HolidayDetails" nillable="true" type="tns:Holiday" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SingleHoliday" nillable="true" type="tns:SingleHoliday" />
+  <xs:complexType name="PagePermission">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationOutcome">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccessLevel" type="tns:PageAccessLevelType" />
+          <xs:element minOccurs="0" name="CanDelete" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PagePermission" nillable="true" type="tns:PagePermission" />
+  <xs:simpleType name="PageAccessLevelType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ReadOnly">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Request">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Direct">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PageAccessLevelType" nillable="true" type="tns:PageAccessLevelType" />
+  <xs:complexType name="HolidayList">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationOutcome">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Holidays" nillable="true" type="tns:ArrayOfHoliday" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="HolidayList" nillable="true" type="tns:HolidayList" />
+  <xs:complexType name="GenericBool">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationOutcome">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GenericBool" nillable="true" type="tns:GenericBool" />
+  <xs:simpleType name="RequestType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Holiday" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RequestType" nillable="true" type="tns:RequestType" />
+  <xs:complexType name="MultiOperationOutcome">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationOutcome">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="OperationExceptions" type="xs:int" />
+          <xs:element minOccurs="0" name="OperationsFailed" type="xs:int" />
+          <xs:element minOccurs="0" name="OperationsSucceeded" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MultiOperationOutcome" nillable="true" type="tns:MultiOperationOutcome" />
+</xs:schema>

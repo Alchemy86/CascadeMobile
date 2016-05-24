@@ -126,6 +126,10 @@
           "lib/dnx451/EntityFramework.Relational.Design.dll": {}
         }
       },
+      "HRServiceCalls/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5.1"
+      },
       "Ix-Async/1.2.5": {
         "type": "package",
         "frameworkAssemblies": [
@@ -2313,6 +2317,10 @@
         "runtime": {
           "lib/dnx451/EntityFramework.Relational.Design.dll": {}
         }
+      },
+      "HRServiceCalls/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5.1"
       },
       "Ix-Async/1.2.5": {
         "type": "package",
@@ -4505,6 +4513,10 @@
           "lib/dnx451/EntityFramework.Relational.Design.dll": {}
         }
       },
+      "HRServiceCalls/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5.1"
+      },
       "Ix-Async/1.2.5": {
         "type": "package",
         "frameworkAssemblies": [
@@ -6574,6 +6586,10 @@
     }
   },
   "libraries": {
+    "HRServiceCalls/1.0.0": {
+      "type": "project",
+      "path": "../wrap/HRServiceCalls/project.json"
+    },
     "EntityFramework.Commands/7.0.0-rc1-final": {
       "type": "package",
       "serviceable": true,
@@ -8947,6 +8963,8 @@
       "Microsoft.AspNet.Server.WebListener >= 1.0.0-rc1-final",
       "Microsoft.AspNet.Session >= 1.0.0-rc1-final"
     ],
-    "DNX,Version=v4.5.1": []
+    "DNX,Version=v4.5.1": [
+      "HRServiceCalls >= 1.0.0-*"
+    ]
   }
 }

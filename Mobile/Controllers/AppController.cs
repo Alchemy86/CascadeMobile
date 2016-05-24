@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNet.Mvc;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.OptionsModel;
 using Mobile.CustomAttributes;
-using Mobile.Models;
+
 
 // For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 

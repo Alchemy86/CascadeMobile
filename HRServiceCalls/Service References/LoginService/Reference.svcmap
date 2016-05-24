@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="83e9cd93-09d9-4f0f-96b3-2f6baccc317d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/Cascade/dotnet/webservice/secure/loginservice.svc/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="e165e5de-caee-4a65-867d-5a869fc2f3d3" SourceId="1" SourceUrl="http://localhost/Cascade/dotnet/webservice/secure/loginservice.svc/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="80a8f406-45d4-4184-a923-cd3ddc80a7f1" SourceId="1" SourceUrl="http://localhost/Cascade/dotnet/webservice/secure/loginservice.svc/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="2b7c911b-0511-4acd-8482-abfc9add0720" SourceId="1" SourceUrl="http://localhost/Cascade/dotnet/webservice/secure/loginservice.svc/mex" />
+    <MetadataFile FileName="Cascade.HR.BLL.DataContracts.xsd" MetadataType="Schema" ID="0e6b6d25-720b-4cd5-8a49-b57a31ef4fb0" SourceId="1" SourceUrl="http://localhost/Cascade/dotnet/webservice/secure/loginservice.svc/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,7 +1,7 @@
 ﻿{
   "AppSettings": {
-    "Title": "Cascade Mobile 2 s",
-    "Title2":  "Moons Moons Moons"
+    "Title": "Cascade Mobile",
+    "WelcomeMessage":  "Welcome to Cascade Mobile"
   },
   "Data": {
     "ConnectionString": "data source=AGIBSON-PC81;initial catalog=MobileTest;Integrated Security=True;MultipleActiveResultSets=True;App=EntityFramework"

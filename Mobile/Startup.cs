@@ -29,7 +29,7 @@ namespace Mobile
             services.AddSession();
 
             services.AddInstance<IConfiguration>(Configuration);
-            services.AddTransient<IAppSettings, AppSettings>();
+            //services.AddTransient<IAppSettings, AppSettings>();
             services.AddScoped<SiteSetting>();
             //services.AddEntityFramework()
             //    .AddSqlServer()

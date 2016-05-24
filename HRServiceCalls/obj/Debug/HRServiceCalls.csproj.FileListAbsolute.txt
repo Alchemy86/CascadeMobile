@@ -1,0 +1,6 @@
+C:\git\DAS\CascadeMobile\HRServiceCalls\bin\Debug\HRServiceCalls.dll.config
+C:\git\DAS\CascadeMobile\HRServiceCalls\bin\Debug\HRServiceCalls.dll
+C:\git\DAS\CascadeMobile\HRServiceCalls\bin\Debug\HRServiceCalls.pdb
+C:\git\DAS\CascadeMobile\HRServiceCalls\obj\Debug\HRServiceCalls.csprojResolveAssemblyReference.cache
+C:\git\DAS\CascadeMobile\HRServiceCalls\obj\Debug\HRServiceCalls.dll
+C:\git\DAS\CascadeMobile\HRServiceCalls\obj\Debug\HRServiceCalls.pdb

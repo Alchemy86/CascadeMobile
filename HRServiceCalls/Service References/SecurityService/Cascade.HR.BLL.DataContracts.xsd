@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Cascade.HR.BLL.DataContracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Cascade.HR.BLL.DataContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="RoleItems">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationOutcome">
+        <xs:sequence>
+          <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Items" nillable="true" type="q1:ArrayOfKeyValueOfstringboolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RoleItems" nillable="true" type="tns:RoleItems" />
+  <xs:complexType name="OperationOutcome">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="OutcomeDetails" nillable="true" type="tns:OutcomeDetails" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OperationOutcome" nillable="true" type="tns:OperationOutcome" />
+  <xs:complexType name="OutcomeDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="tns:OperationOutcomeStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OutcomeDetails" nillable="true" type="tns:OutcomeDetails" />
+  <xs:simpleType name="OperationOutcomeStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="Failure" />
+      <xs:enumeration value="SystemException" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="OperationOutcomeStatus" nillable="true" type="tns:OperationOutcomeStatus" />
+  <xs:complexType name="InvalidCredentials">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OutcomeDetails">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InvalidCredentials" nillable="true" type="tns:InvalidCredentials" />
+  <xs:complexType name="PinNumberLockout">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OutcomeDetails">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PinNumberLockout" nillable="true" type="tns:PinNumberLockout" />
+  <xs:complexType name="TaskAlreadyComplete">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OutcomeDetails">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TaskAlreadyComplete" nillable="true" type="tns:TaskAlreadyComplete" />
+  <xs:complexType name="LoginLockout">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OutcomeDetails">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LoginLockout" nillable="true" type="tns:LoginLockout" />
+  <xs:complexType name="ObjectActions">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationOutcome">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Actions" nillable="true" type="q2:ArrayOfKeyValueOfstringboolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ObjectActions" nillable="true" type="tns:ObjectActions" />
+</xs:schema>
