@@ -95,7 +95,7 @@ namespace Mobile.Models.Pages
         /// <summary>
         /// Units
         /// </summary>
-        public AttendanceUnit Units { get; set; }
+        //public AttendanceUnit Units { get; set; }
         #endregion
     }
 

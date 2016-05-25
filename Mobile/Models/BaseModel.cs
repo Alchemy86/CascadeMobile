@@ -26,4 +26,3 @@ namespace Mobile.Models
         public string ErrorMessage { get; set; }
     }
 }
-}
