@@ -1,7 +1,9 @@
 ﻿{
   "AppSettings": {
     "Title": "Cascade Mobile",
-    "WelcomeMessage":  "Welcome to Cascade Mobile"
+    "WelcomeMessage": "Welcome to Cascade Mobile",
+    "CascadeHrEndPointRoot": "agibson-pc81/Cascade",
+    "ErrorLogFilePath": "C:\\git\\mobile.log"
   },
   "Data": {
     "ConnectionString": "data source=AGIBSON-PC81;initial catalog=MobileTest;Integrated Security=True;MultipleActiveResultSets=True;App=EntityFramework"
