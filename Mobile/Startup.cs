@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNet.Builder;
+﻿using HRServiceCalls;
+using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Mobile.CustomAttributes;
+using Mobile.Models;
 
 namespace Mobile
 {
@@ -28,9 +30,11 @@ namespace Mobile
             services.AddSession();
 
             services.AddInstance<IConfiguration>(Configuration);
+            services.AddScoped<SessionDetails>();
             //services.AddTransient<IAppSettings, AppSettings>();
             services.AddScoped<SiteSetting>();
             services.AddScoped<ValidationService>();
+            services.AddTransient<IMobileUnitOfWork, MobileUnitOfWork>();
             //services.AddEntityFramework()
             //    .AddSqlServer()
             //    .AddDbContext<QuotesAppContext>(options => options.UseSqlServer(Configuration["Data:ConnectionString"]));
