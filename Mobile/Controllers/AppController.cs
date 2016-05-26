@@ -7,6 +7,7 @@ using Mobile.CustomAttributes;
 namespace Mobile.Controllers
 {
     [ServiceFilter(typeof(SiteSetting))]
+    [ServiceFilter(typeof(ValidationService))]
     public class AppController : Controller
     {
         public AppController()

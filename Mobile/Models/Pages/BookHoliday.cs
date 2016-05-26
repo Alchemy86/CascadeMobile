@@ -1,27 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Mobile.Models.Pages
 {
-    public class BookHolidayModel : BaseModel
+    public class BookHoliday : BaseModel
     {
         /// <summary>
         /// Holiday Balance object
         /// </summary>
-        public HolidayBalanceModel HolidayBalance { get; set; }
+        public HolidayBalance HolidayBalance { get; set; }
 
         /// <summary>
         /// Single Holiday
         /// </summary>
-        public SingleHolidayModel SingleHoliday { get; set; }
+        public SingleHoliday SingleHoliday { get; set; }
     }
 
     /// <summary>
     /// Holiday Balance Model
     /// </summary>
-    public class HolidayBalanceModel : BaseModel
+    public class HolidayBalance : BaseModel
     {
         /// <summary>
         /// Invalid Balance Details
@@ -109,18 +106,18 @@ namespace Mobile.Models.Pages
     /// <summary>
     /// Single Holiday Model 
     /// </summary>
-    public class SingleHolidayModel
+    public class SingleHoliday
     {
         /// <summary>
         /// SingleHoliday Holiday
         /// </summary>
-        public HolidayModel Holiday { get; set; }
+        public Holiday Holiday { get; set; }
     }
 
     /// <summary>
     /// The holiday Base model
     /// </summary>
-    public class HolidayModel : HolidayBaseModel
+    public class Holiday : HolidayBaseModel
     {
         /// <summary>
         /// BasePage.GetDurationDescription(_CurrentRequest.Duration, _CurrentRequest.Units); 

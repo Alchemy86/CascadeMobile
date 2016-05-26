@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="663def7c-768a-486b-918f-7f7d829af0e4" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/Cascade/dotnet/webservice/secure/EmployeeDetailsService.svc/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="34c1ec53-d785-4f8b-88be-38deceee2e36" SourceId="1" SourceUrl="http://localhost/Cascade/dotnet/webservice/secure/EmployeeDetailsService.svc/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="281f6ece-affd-47a5-b831-204d44cb831b" SourceId="1" SourceUrl="http://localhost/Cascade/dotnet/webservice/secure/EmployeeDetailsService.svc/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="02be322e-d126-4212-96c4-2a4d1ca2c459" SourceId="1" SourceUrl="http://localhost/Cascade/dotnet/webservice/secure/EmployeeDetailsService.svc/mex" />
+    <MetadataFile FileName="Cascade.HR.BLL.DataContracts.xsd" MetadataType="Schema" ID="24c37486-2dce-44f5-b8d9-278ee791e1bc" SourceId="1" SourceUrl="http://localhost/Cascade/dotnet/webservice/secure/EmployeeDetailsService.svc/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="baec0f40-58cd-479d-a8f5-f8ccd852f541" SourceId="1" SourceUrl="http://localhost/Cascade/dotnet/webservice/secure/EmployeeDetailsService.svc/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

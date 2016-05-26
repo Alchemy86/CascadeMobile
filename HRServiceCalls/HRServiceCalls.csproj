@@ -44,8 +44,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="enums\MobileEnums.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\ApplicationService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\EmployeeDetailsService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -92,6 +98,22 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\ApplicationService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EmployeeDetailsService\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EmployeeDetailsService\Cascade.HR.BLL.DataContracts.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EmployeeDetailsService\HRServiceCalls.EmployeeDetailsService.EmployeeDetails.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EmployeeDetailsService\service.wsdl" />
+    <None Include="Service References\EmployeeDetailsService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EmployeeDetailsService\service1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\EmployeeGroupService\Arrays.xsd">
@@ -201,6 +223,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\ApplicationService\" />
+    <WCFMetadataStorage Include="Service References\EmployeeDetailsService\" />
     <WCFMetadataStorage Include="Service References\EmployeeGroupService\" />
     <WCFMetadataStorage Include="Service References\HolidayService\" />
     <WCFMetadataStorage Include="Service References\LoginService\" />
@@ -275,6 +298,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\SecurityService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EmployeeDetailsService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EmployeeDetailsService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EmployeeDetailsService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
