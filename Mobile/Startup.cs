@@ -35,6 +35,7 @@ namespace Mobile
             services.AddScoped<SiteSetting>();
             services.AddScoped<ValidationService>();
             services.AddTransient<IMobileUnitOfWork, MobileUnitOfWork>();
+            services.AddScoped<RoleItemKey>();
             //services.AddEntityFramework()
             //    .AddSqlServer()
             //    .AddDbContext<QuotesAppContext>(options => options.UseSqlServer(Configuration["Data:ConnectionString"]));
